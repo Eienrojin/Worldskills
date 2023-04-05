@@ -1,0 +1,18 @@
+﻿<Page x:Class="WpfTest.Autorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfTest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Autorization">
+
+    <Grid>
+        <TextBlock x:Name="LoginTextBlock" Text="Логин" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,83,0,0" TextAlignment="Center"></TextBlock>
+        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Width="176" Margin="312,104,0,0" Height="30" VerticalAlignment="Top"/>
+        <TextBlock x:Name="PasswordTextBlock" Text="Пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="379,139,0,0" TextAlignment="Center"></TextBlock>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Width="176" Margin="312,160,0,0" Height="30" VerticalAlignment="Top"/>
+        <Button x:Name="LoginButton" Content="Вход" Margin="312,195,0,0" Click="LoginButton_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="176" ></Button>
+    </Grid>
+</Page>
