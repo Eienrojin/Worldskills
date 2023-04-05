@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище WorldskillsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Patronym" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Birth_Date" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Data_First_Visit" Type="date" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Tag_Color" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client_Record">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Client" Type="int" Nullable="false" />
+    <Property Name="Id_Service" Type="int" Nullable="false" />
+    <Property Name="Start_Date" Type="date" Nullable="false" />
+    <Property Name="Start_Time" Type="time" Precision="0" />
+    <Property Name="Additional_Commentary" Type="nvarchar" MaxLength="100" />
+    <Property Name="Additional_Scans" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Patronym" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Pass_Serial_Num" Type="bigint" Nullable="false" />
+    <Property Name="Department_Code" Type="bigint" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Salary_Ratio" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="Birth_Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Work_Start_Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Main_Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Manufacturer" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Actuality" Type="bit" Nullable="false" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="Id_Category" Type="int" />
+    <Property Name="Characteristics" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Weight" Type="decimal" Precision="2" Scale="0" />
+    <Property Name="Width" Type="decimal" Precision="2" Scale="0" />
+    <Property Name="Length" Type="decimal" Precision="2" Scale="0" />
+    <Property Name="Height" Type="decimal" Precision="2" Scale="0" />
+    <Property Name="Additional_Photos" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sale_History">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Sale_Date" Type="date" Nullable="false" />
+    <Property Name="Sale_Time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Service" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="Discount" Type="int" Nullable="false" />
+    <Property Name="Duration_Hours" Type="int" Nullable="false" />
+    <Property Name="Main_Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Additional_Photos" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище WorldskillsModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Record" EntityType="Self.Client_Record" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sale_History" EntityType="Self.Sale_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
